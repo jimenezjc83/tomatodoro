@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00637EE19071944003DA952 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A00637ED19071944003DA952 /* README.txt */; };
+		A00637F119071CFB003DA952 /* TOTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A00637F019071CFB003DA952 /* TOTestCase.m */; };
+		A01978551905E20000931A6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB83C18FF2E9800C97AC6 /* Foundation.framework */; };
+		A01978561905E20000931A6B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB83E18FF2E9800C97AC6 /* CoreGraphics.framework */; };
+		A01978571905E20000931A6B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB84018FF2E9800C97AC6 /* UIKit.framework */; };
+		A019785D1905E20000931A6B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A019785B1905E20000931A6B /* InfoPlist.strings */; };
+		A019785F1905E20000931A6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A019785E1905E20000931A6B /* main.m */; };
+		A019787E1905E24700931A6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019784C1905DFD100931A6B /* QuartzCore.framework */; };
+		A01978801905E26000931A6B /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A019787F1905E26000931A6B /* GHUnitIOS.framework */; };
 		A02FB83D18FF2E9800C97AC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB83C18FF2E9800C97AC6 /* Foundation.framework */; };
 		A02FB83F18FF2E9800C97AC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB83E18FF2E9800C97AC6 /* CoreGraphics.framework */; };
 		A02FB84118FF2E9800C97AC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB84018FF2E9800C97AC6 /* UIKit.framework */; };
@@ -14,24 +23,18 @@
 		A02FB84918FF2E9800C97AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84818FF2E9800C97AC6 /* main.m */; };
 		A02FB84D18FF2E9800C97AC6 /* TOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */; };
 		A02FB84F18FF2E9800C97AC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02FB84E18FF2E9800C97AC6 /* Images.xcassets */; };
-		A02FB85618FF2E9800C97AC6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB85518FF2E9800C97AC6 /* XCTest.framework */; };
-		A02FB85718FF2E9800C97AC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB83C18FF2E9800C97AC6 /* Foundation.framework */; };
-		A02FB85818FF2E9800C97AC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02FB84018FF2E9800C97AC6 /* UIKit.framework */; };
-		A02FB86018FF2E9800C97AC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A02FB85E18FF2E9800C97AC6 /* InfoPlist.strings */; };
-		A02FB86218FF2E9800C97AC6 /* TomatodoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB86118FF2E9800C97AC6 /* TomatodoroTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A02FB85918FF2E9800C97AC6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A02FB83118FF2E9700C97AC6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A02FB83818FF2E9800C97AC6;
-			remoteInfo = Tomatodoro;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		A00637ED19071944003DA952 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		A00637F019071CFB003DA952 /* TOTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOTestCase.m; sourceTree = "<group>"; };
+		A019784C1905DFD100931A6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A01978541905E20000931A6B /* TomatodoroTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatodoroTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A019785A1905E20000931A6B /* TomatodoroTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TomatodoroTest-Info.plist"; sourceTree = "<group>"; };
+		A019785C1905E20000931A6B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A019785E1905E20000931A6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A01978601905E20000931A6B /* TomatodoroTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TomatodoroTest-Prefix.pch"; sourceTree = "<group>"; };
+		A019787F1905E26000931A6B /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = TomatodoroTest/GHUnitIOS.framework; sourceTree = "<group>"; };
 		A02FB83918FF2E9800C97AC6 /* Tomatodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomatodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02FB83C18FF2E9800C97AC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A02FB83E18FF2E9800C97AC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,14 +46,22 @@
 		A02FB84B18FF2E9800C97AC6 /* TOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOAppDelegate.h; sourceTree = "<group>"; };
 		A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOAppDelegate.m; sourceTree = "<group>"; };
 		A02FB84E18FF2E9800C97AC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A02FB85418FF2E9800C97AC6 /* TomatodoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TomatodoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02FB85518FF2E9800C97AC6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		A02FB85D18FF2E9800C97AC6 /* TomatodoroTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TomatodoroTests-Info.plist"; sourceTree = "<group>"; };
-		A02FB85F18FF2E9800C97AC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A02FB86118FF2E9800C97AC6 /* TomatodoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TomatodoroTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A01978511905E20000931A6B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01978801905E26000931A6B /* GHUnitIOS.framework in Frameworks */,
+				A019787E1905E24700931A6B /* QuartzCore.framework in Frameworks */,
+				A01978561905E20000931A6B /* CoreGraphics.framework in Frameworks */,
+				A01978571905E20000931A6B /* UIKit.framework in Frameworks */,
+				A01978551905E20000931A6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A02FB83618FF2E9800C97AC6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,24 +72,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A02FB85118FF2E9800C97AC6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A02FB85618FF2E9800C97AC6 /* XCTest.framework in Frameworks */,
-				A02FB85818FF2E9800C97AC6 /* UIKit.framework in Frameworks */,
-				A02FB85718FF2E9800C97AC6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01978581905E20000931A6B /* TomatodoroTest */ = {
+			isa = PBXGroup;
+			children = (
+				A01978591905E20000931A6B /* Supporting Files */,
+				A00637ED19071944003DA952 /* README.txt */,
+				A00637F019071CFB003DA952 /* TOTestCase.m */,
+			);
+			path = TomatodoroTest;
+			sourceTree = "<group>";
+		};
+		A01978591905E20000931A6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A019785A1905E20000931A6B /* TomatodoroTest-Info.plist */,
+				A019785B1905E20000931A6B /* InfoPlist.strings */,
+				A019785E1905E20000931A6B /* main.m */,
+				A01978601905E20000931A6B /* TomatodoroTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A02FB83018FF2E9700C97AC6 = {
 			isa = PBXGroup;
 			children = (
 				A02FB84218FF2E9800C97AC6 /* Tomatodoro */,
-				A02FB85B18FF2E9800C97AC6 /* TomatodoroTests */,
+				A01978581905E20000931A6B /* TomatodoroTest */,
 				A02FB83B18FF2E9800C97AC6 /* Frameworks */,
 				A02FB83A18FF2E9800C97AC6 /* Products */,
 			);
@@ -88,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A02FB83918FF2E9800C97AC6 /* Tomatodoro.app */,
-				A02FB85418FF2E9800C97AC6 /* TomatodoroTests.xctest */,
+				A01978541905E20000931A6B /* TomatodoroTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +118,8 @@
 		A02FB83B18FF2E9800C97AC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A019787F1905E26000931A6B /* GHUnitIOS.framework */,
+				A019784C1905DFD100931A6B /* QuartzCore.framework */,
 				A02FB83C18FF2E9800C97AC6 /* Foundation.framework */,
 				A02FB83E18FF2E9800C97AC6 /* CoreGraphics.framework */,
 				A02FB84018FF2E9800C97AC6 /* UIKit.framework */,
@@ -126,27 +150,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A02FB85B18FF2E9800C97AC6 /* TomatodoroTests */ = {
-			isa = PBXGroup;
-			children = (
-				A02FB86118FF2E9800C97AC6 /* TomatodoroTests.m */,
-				A02FB85C18FF2E9800C97AC6 /* Supporting Files */,
-			);
-			path = TomatodoroTests;
-			sourceTree = "<group>";
-		};
-		A02FB85C18FF2E9800C97AC6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A02FB85D18FF2E9800C97AC6 /* TomatodoroTests-Info.plist */,
-				A02FB85E18FF2E9800C97AC6 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A01978531905E20000931A6B /* TomatodoroTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A01978781905E20000931A6B /* Build configuration list for PBXNativeTarget "TomatodoroTest" */;
+			buildPhases = (
+				A01978501905E20000931A6B /* Sources */,
+				A01978511905E20000931A6B /* Frameworks */,
+				A01978521905E20000931A6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TomatodoroTest;
+			productName = TomatodoroTest;
+			productReference = A01978541905E20000931A6B /* TomatodoroTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A02FB83818FF2E9800C97AC6 /* Tomatodoro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A02FB86518FF2E9800C97AC6 /* Build configuration list for PBXNativeTarget "Tomatodoro" */;
@@ -164,24 +187,6 @@
 			productReference = A02FB83918FF2E9800C97AC6 /* Tomatodoro.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A02FB85318FF2E9800C97AC6 /* TomatodoroTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A02FB86818FF2E9800C97AC6 /* Build configuration list for PBXNativeTarget "TomatodoroTests" */;
-			buildPhases = (
-				A02FB85018FF2E9800C97AC6 /* Sources */,
-				A02FB85118FF2E9800C97AC6 /* Frameworks */,
-				A02FB85218FF2E9800C97AC6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A02FB85A18FF2E9800C97AC6 /* PBXTargetDependency */,
-			);
-			name = TomatodoroTests;
-			productName = TomatodoroTests;
-			productReference = A02FB85418FF2E9800C97AC6 /* TomatodoroTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -191,11 +196,6 @@
 				CLASSPREFIX = TO;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = NeblinaSoft;
-				TargetAttributes = {
-					A02FB85318FF2E9800C97AC6 = {
-						TestTargetID = A02FB83818FF2E9800C97AC6;
-					};
-				};
 			};
 			buildConfigurationList = A02FB83418FF2E9700C97AC6 /* Build configuration list for PBXProject "Tomatodoro" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -210,12 +210,21 @@
 			projectRoot = "";
 			targets = (
 				A02FB83818FF2E9800C97AC6 /* Tomatodoro */,
-				A02FB85318FF2E9800C97AC6 /* TomatodoroTests */,
+				A01978531905E20000931A6B /* TomatodoroTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A01978521905E20000931A6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00637EE19071944003DA952 /* README.txt in Resources */,
+				A019785D1905E20000931A6B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A02FB83718FF2E9800C97AC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,17 +234,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A02FB85218FF2E9800C97AC6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A02FB86018FF2E9800C97AC6 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A01978501905E20000931A6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00637F119071CFB003DA952 /* TOTestCase.m in Sources */,
+				A019785F1905E20000931A6B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A02FB83518FF2E9800C97AC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,25 +255,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A02FB85018FF2E9800C97AC6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A02FB86218FF2E9800C97AC6 /* TomatodoroTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A02FB85A18FF2E9800C97AC6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A02FB83818FF2E9800C97AC6 /* Tomatodoro */;
-			targetProxy = A02FB85918FF2E9800C97AC6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
+		A019785B1905E20000931A6B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A019785C1905E20000931A6B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		A02FB84518FF2E9800C97AC6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,17 +274,49 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A02FB85E18FF2E9800C97AC6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A02FB85F18FF2E9800C97AC6 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A01978791905E20000931A6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TomatodoroTest",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TomatodoroTest/TomatodoroTest-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TomatodoroTest/TomatodoroTest-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A019787A1905E20000931A6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TomatodoroTest",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TomatodoroTest/TomatodoroTest-Prefix.pch";
+				INFOPLIST_FILE = "TomatodoroTest/TomatodoroTest-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		A02FB86318FF2E9800C97AC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -379,49 +413,18 @@
 			};
 			name = Release;
 		};
-		A02FB86918FF2E9800C97AC6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tomatodoro.app/Tomatodoro";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tomatodoro/Tomatodoro-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TomatodoroTests/TomatodoroTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		A02FB86A18FF2E9800C97AC6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tomatodoro.app/Tomatodoro";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tomatodoro/Tomatodoro-Prefix.pch";
-				INFOPLIST_FILE = "TomatodoroTests/TomatodoroTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A01978781905E20000931A6B /* Build configuration list for PBXNativeTarget "TomatodoroTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01978791905E20000931A6B /* Debug */,
+				A019787A1905E20000931A6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A02FB83418FF2E9700C97AC6 /* Build configuration list for PBXProject "Tomatodoro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -438,14 +441,7 @@
 				A02FB86718FF2E9800C97AC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		A02FB86818FF2E9800C97AC6 /* Build configuration list for PBXNativeTarget "TomatodoroTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A02FB86918FF2E9800C97AC6 /* Debug */,
-				A02FB86A18FF2E9800C97AC6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
