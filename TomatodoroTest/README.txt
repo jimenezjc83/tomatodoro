@@ -6,6 +6,8 @@ Test a diseñar:
 - Probar el inicio de un pomodoro
 - Probar pausar un pomodoro
 - Probar cancelar un pomodoro
+- Probar que podemos manejar el tiempo de un pomodoro
+- Probar que luego de 5 seg el pomodoro esta en t + 5
 - Probar un ciclo completo de pomodoros (4 pomodoros + 1 descanso largo)
 - Probar el contador de Pomodoros por día
 - Probar el contador de Pomodoros por semana

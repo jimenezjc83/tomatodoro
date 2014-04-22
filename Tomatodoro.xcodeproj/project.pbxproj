@@ -23,6 +23,7 @@
 		A02FB84918FF2E9800C97AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84818FF2E9800C97AC6 /* main.m */; };
 		A02FB84D18FF2E9800C97AC6 /* TOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */; };
 		A02FB84F18FF2E9800C97AC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02FB84E18FF2E9800C97AC6 /* Images.xcassets */; };
+		D72F28CD19072FDA00737AD5 /* TOClock.m in Sources */ = {isa = PBXBuildFile; fileRef = D72F28CC19072FDA00737AD5 /* TOClock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOAppDelegate.m; sourceTree = "<group>"; };
 		A02FB84E18FF2E9800C97AC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A02FB85518FF2E9800C97AC6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D72F28CB19072FDA00737AD5 /* TOClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOClock.h; sourceTree = "<group>"; };
+		D72F28CC19072FDA00737AD5 /* TOClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOClock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 				A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */,
 				A02FB84E18FF2E9800C97AC6 /* Images.xcassets */,
 				A02FB84318FF2E9800C97AC6 /* Supporting Files */,
+				D72F28CB19072FDA00737AD5 /* TOClock.h */,
+				D72F28CC19072FDA00737AD5 /* TOClock.m */,
 			);
 			path = Tomatodoro;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				A02FB84918FF2E9800C97AC6 /* main.m in Sources */,
 				A02FB84D18FF2E9800C97AC6 /* TOAppDelegate.m in Sources */,
+				D72F28CD19072FDA00737AD5 /* TOClock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
