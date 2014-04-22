@@ -7,7 +7,7 @@
 //
 
 #import <GHUnitIOS/GHUnit.h>
-#import "TOPomodoro.h"
+#import "TOClock.h"
 
 
 @interface TOTestCase : GHTestCase { }
@@ -34,7 +34,7 @@
  probar que podemos crear un TOPomodoro
  */
 - (void)testCreatePomodoro{
-    p = [[TOPomodoro alloc] init];
+    [[TOClock alloc] init];
     
 }
 
