@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TOPeriod : UIViewController
+@interface TOPeriod : NSObject
+{
+    NSString *_periodName;
+    int _periodDuration;
+    
+}
 
 @end
