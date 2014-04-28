@@ -31,7 +31,7 @@
 }
 
 /*
- probar que podemos crear un TOPomodoro
+ probar que podemos crear un TOClock
  */
 - (void)testCreatePomodoro{
     [[TOClock alloc] init];
