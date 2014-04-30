@@ -35,16 +35,34 @@
 }
 
 /*
-    Test para administrar los periodos
+    Test para gestionar los periodos
+ 
+    En este método se van a ejecutar los siguientes tests:
+ 
+    1.   Crear un nuevo periodo
+    2.   Validar nombre del periodo
+    3.   Validar duración del periodo
+    4.   Validar el tipo de periodo
+    5.   Crear una colección de periodos y verificar colisiones de UUIDs
+ 
  */
 
 - (void)testCrudPeriodo
 {
     
-    //Crear un nuevo periodo vacio, pero con un preconfigurado
+    //1. Crear un nuevo periodo
+    
     GHTestLog(@"Generate empty period...");
+    
     TOPeriod *period = [[TOPeriod alloc]initEmptyPeriod:@"Pomodoro"];
+    
+    GHAssertNotNil(period, @"Error creando periodo!");
+    
     GHTestLog(@"Period: %@", period);
+    
+    //2. Validar nombre del periodo
+    
+    
     
     
     
