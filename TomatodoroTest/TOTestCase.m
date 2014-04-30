@@ -54,18 +54,42 @@
     
     GHTestLog(@"Generate empty period...");
     
-    TOPeriod *period = [[TOPeriod alloc]initEmptyPeriod:@"Pomodoro"];
+    TOPeriod *p = [[TOPeriod alloc]initEmptyPeriod:@"Pomodoro"];
     
-    GHAssertNotNil(period, @"Error creando periodo!");
+    GHAssertNotNil(p, @"Error creando periodo!");
     
-    GHTestLog(@"Period: %@", period);
+    GHTestLog(@"Period: %@", p);
     
     //2. Validar nombre del periodo
     
+    GHAssertEqualStrings(p.periodName, @"Pomodoro", @"El nombre es incorrecto!");
+    
+    //3. Validar la duracion de un periodo
+    
+    GHAssertGreaterThan(p.periodDuration, 0, @"El periodo debe ser mayor a 0");
+    
+    //4. Validar el tipo de periodo
+    
+    GHAssertEquals(p.periodType, WORKING, @"El tipo de perido es incorrecto");
+    
+    //5. Crear una colección de periodos y verificar colisiones de UUIDs
+    
+    NSMutableArray *periods = [[NSMutableArray alloc] init];
+    
+    for (int i=0; i < 5; i++) {
+        TOPeriod *p1 = [TOPeriod randomPeriod];
+        [periods addObject:p1];
+    }
+    
+    GHTestLog(@"Periodos Generados: ");
+    
+    for (TOPeriod *period in periods) {
+        GHTestLog(@"%@", period);
+    }
     
     
     
-    
+
 }
 
  

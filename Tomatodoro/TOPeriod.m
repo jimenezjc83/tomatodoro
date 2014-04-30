@@ -14,10 +14,38 @@
 //Sobrecarga del método description
 - (NSString *)description
 {
-    NSString *descriptionString = [[NSString alloc] initWithFormat:@"%@, Type: %@, Duration: %d, UUID: %@", self.name, self.type, self.duration, self.uuid];
+    NSString *descriptionString = [[NSString alloc] initWithFormat:@"Name: %@, Type: %u, Duration: %d, UUID: %@", self.periodName, self.periodType, self.periodDuration, self.periodUuid];
     
     return descriptionString;
 }
+
++ (instancetype)randomPeriod
+{
+    
+    NSArray *randomPeriodNameList = @[@"Pomodoro", @"Short Break", @"Long Break"];
+    
+    NSInteger periodNameIndex = arc4random() % [randomPeriodNameList count];
+    
+    NSString *randomPeriodName = [NSString stringWithFormat:@"%@", randomPeriodNameList[periodNameIndex]];
+    
+    int randomPeriodDuration = arc4random() % 60;
+    
+    NSArray *randomTypeList = @[[NSNumber numberWithInt:0], [NSNumber numberWithInt:1]];
+    
+    NSInteger periodTypeIndex = arc4random() % [randomTypeList count];
+    
+    NSNumber *randomPeriodType = randomTypeList[periodTypeIndex];
+    
+    TOPeriod *newPeriod = [[self alloc] initEmptyPeriod:randomPeriodName];
+    
+    newPeriod.periodDuration = randomPeriodDuration;
+    
+    newPeriod.periodType = randomPeriodType.intValue;
+    
+    return newPeriod;
+    
+}
+
 
 //Se define este inicializador para crear un nuevo periodo con valores por defecto, recibe un nombre cualquiera
 - (instancetype) initEmptyPeriod:(NSString *)name
@@ -25,10 +53,10 @@
     self = [super init];
     
     if (self) {
-        _name=name;
-        _type=@"Working";
-        _duration=25;
-        _uuid=[self generateRandomUUID];
+        _periodName=name;
+        _periodType=WORKING;
+        _periodDuration=25;
+        _periodUuid=[self generateRandomUUID];
     }
     return self;
 }
