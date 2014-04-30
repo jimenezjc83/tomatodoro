@@ -16,10 +16,10 @@ The best pomodoro iPhone app ever!!
 Objects
 =======
 
-- Timer: Objeto encargado de contar un periodo, posee un estado, fecha de inicio y el periodo a ser contabilizado.
+- TOClock: Objeto encargado de contar un periodo, posee un estado, fecha de inicio y el periodo a ser contabilizado.
 
-- Period: Consiste en una descripción de un periodo de tiempo, tiene un identificador, nombre, duración y el tipo de periodo, que puede ser 'Working' o 'Idle'.
+- TOPeriod: Consiste en una descripción de un periodo de tiempo, tiene un identificador, nombre, duración y el tipo de periodo, que puede ser 'Working' o 'Idle'.
 
-- WorkPlan: Contiene un conjunto de periodos, el cual va generar un archivo log con la información de la ejecución del contador de periodos. Posee: duración total del plan y registros log.
+- TOWorkPlan: Contiene un conjunto de periodos, el cual va generar un archivo log con la información de la ejecución del contador de periodos. Posee: duración total del plan, chain o secuencia de periodos y registros log.
 
   

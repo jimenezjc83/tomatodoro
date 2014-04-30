@@ -8,10 +8,14 @@
 
 #import <GHUnitIOS/GHUnit.h>
 #import "TOClock.h"
+#import "TOPeriod.h"
 
 
-@interface TOTestCase : GHTestCase { }
+@interface TOTestCase : GHTestCase {
+
+}
 @end
+
 
 @implementation TOTestCase
 
@@ -31,11 +35,21 @@
 }
 
 /*
- probar que podemos crear un TOClock
+    Test para administrar los periodos
  */
-- (void)testCreatePomodoro{
-    [[TOClock alloc] init];
+
+- (void)testCrudPeriodo
+{
+    
+    //Crear un nuevo periodo vacio, pero con un preconfigurado
+    GHTestLog(@"Generate empty period...");
+    TOPeriod *period = [[TOPeriod alloc]initEmptyPeriod:@"Pomodoro"];
+    GHTestLog(@"Period: %@", period);
+    
+    
     
 }
+
+ 
 
 @end

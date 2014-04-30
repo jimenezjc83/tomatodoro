@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface TOPeriod : NSObject
-{
-    NSString *_periodName;
-    int _periodDuration;
-    
-}
+
+
+@property(nonatomic) NSString *uuid;
+@property(nonatomic) NSString *name;
+@property(nonatomic) NSString *type;
+@property(nonatomic) int duration;
+
+- (instancetype)initEmptyPeriod:(NSString *)name;
 
 @end
