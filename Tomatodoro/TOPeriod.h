@@ -25,8 +25,10 @@
 
 //Class Methods
 
-+ (instancetype)randomPeriod;
++ (instancetype) randomPeriod;
 
-- (instancetype)initEmptyPeriod:(NSString *)name;
+- (instancetype) initEmptyPeriod:(NSString *)name;
+
+- (NSMutableDictionary *) periodToDictionary;
 
 @end

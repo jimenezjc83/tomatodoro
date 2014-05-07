@@ -56,14 +56,15 @@
         _periodName=name;
         _periodType=WORKING;
         _periodDuration=25;
-        _periodUuid=[self generateRandomUUID];
+        _periodUuid=[self generateUUID];
+        //_periodUuid=[self generateRandomID];
     }
     return self;
 }
 
+//Método para generar IDs aleatorios
 
-
-- (NSString *)generateRandomUUID
+- (NSString *) generateRandomID
 {
     NSString *randomUID = [NSString stringWithFormat:@"%c%c%c%c%c",
                                     '0' + arc4random() % 10,
@@ -72,6 +73,33 @@
                                     'A' + arc4random() % 26,
                                     '0' + arc4random() % 10];
     return randomUID;
+}
+
+//Método para generar un UUID
+
+- (NSString *) generateUUID
+{
+    
+    //Función para generar un nuevo UUID
+    
+    NSString *newUUID = [[NSUUID UUID] UUIDString];
+    
+    return newUUID;
+    
+}
+
+//Método que retorna un diccionario del objeto instanciado
+
+- (NSMutableDictionary *) periodToDictionary
+{
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    
+    [dictionary setValue:self.periodName forKey:@"name"];
+    [dictionary setValue:[NSNumber numberWithInt:self.periodType] forKey:@"type"];
+    [dictionary setValue:[NSNumber numberWithInt:self.periodDuration] forKey:@"duration"];
+    [dictionary setValue:self.periodUuid forKey:@"uuid"];
+    
+    return dictionary;
 }
 
 @end
