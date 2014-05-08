@@ -10,12 +10,25 @@
 
 @interface TOPeriod : NSObject
 
+//Class Properties
 
-@property(nonatomic) NSString *uuid;
-@property(nonatomic) NSString *name;
-@property(nonatomic) NSString *type;
-@property(nonatomic) int duration;
+@property(nonatomic) NSString *periodUuid;
 
-- (instancetype)initEmptyPeriod:(NSString *)name;
+@property(nonatomic) NSString *periodName;
+
+@property(nonatomic) enum {
+                            WORKING,
+                            IDLE
+                            } periodType;
+
+@property(nonatomic) int periodDuration;
+
+//Class Methods
+
++ (instancetype) randomPeriod;
+
+- (instancetype) initEmptyPeriod:(NSString *)name;
+
+- (NSMutableDictionary *) periodToDictionary;
 
 @end
