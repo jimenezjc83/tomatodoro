@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TOPeriod.h"
 
 @interface TOClock : NSObject
+
+// el + es para class methods
++(void) initClock:(TOPeriod *)period;
 
 @end

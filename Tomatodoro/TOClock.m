@@ -10,4 +10,8 @@
 
 @implementation TOClock
 
++(void) initClock:(TOPeriod *)period
+{
+    return;
+}
 @end
