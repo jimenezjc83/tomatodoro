@@ -9,15 +9,42 @@
 #import <GHUnitIOS/GHUnit.h>
 #import "TOClock.h"
 #import "TOPeriod.h"
+#import "TOPeriodContainer.h"
 
 
-@interface TOTestCase : GHTestCase {
+@interface TOTestCase : GHTestCase {}
 
-}
 @end
 
-
 @implementation TOTestCase
+
+// Run before each test method
+
+- (void)setUp
+{
+
+}
+
+// Run after each test method
+
+- (void)tearDown
+{
+
+}
+
+// Run before the tests are run for this class
+
+- (void)setUpClass
+{
+
+}
+
+// Run before the tests are run for this class
+
+- (void)tearDownClass
+{
+
+}
 
 /*
  Primer test de pruebas... Comparar 2 cadenas... -.-
@@ -90,9 +117,6 @@
     for (TOPeriod *period in periods) {
         GHTestLog(@"%@", period);
     }
-    
-    
-    
 
 }
 
@@ -136,65 +160,42 @@
  */
 - (void) testGenerarJSON
 {
-    //1. Definir el arreglo de objetos.
     
-    //NSMutableArray *jsonArray = [[NSMutableArray alloc] init];
+    //1. Definir el contenedor de Periodos
     
-    NSMutableArray *dictionaryArray =[[NSMutableArray alloc] init];
+    TOPeriodContainer *container = [[TOPeriodContainer alloc] init];
     
-    //2. Crear un perido de prueba
+    //2. Crear periodo de prueba
     
-    for (int i=0; i<5; i++) {
+    //for (int i=0; i<5; i++) {
         
-        //Crear Periodo
+    //Crear Periodo
         
-        TOPeriod *periodTest = [TOPeriod randomPeriod];
-        
-        //Definir un diccionario y convertir el periodo en diccionario
-        
-        NSMutableDictionary *periodDictionary = [periodTest periodToDictionary];
-        
-        GHTestLog(@"dictionary = %@", periodDictionary);
-        
-        [dictionaryArray addObject:periodDictionary];
-        
-    }
+    TOPeriod *periodTest = [TOPeriod randomPeriod];
     
-    //Serializar Array a JSON
+    //Almacenar en un diccionario el periodo y agregarlo al contenedor
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionaryArray
-                                            options:0 //Puede ser NSJSONWritingPrettyPrinted
-                                            error:nil];
-
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSMutableDictionary *periodDictionary = [periodTest periodToDictionary];
     
+    GHTestLog(@"dictionary = %@", periodDictionary);
+    
+    [container.periodsDictionaries addObject:periodDictionary];
+    
+    //}
+    
+    //Serializar el contenedor de periodos a JSON
+    
+    NSString *jsonString = [container encodeObjectToJSON:container.periodsDictionaries];
     
     GHTestLog(@"jsonString =  %@", jsonString);
     
-    
-    //Deserializar JSON a Array
-    
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    
-    if ([jsonObject isKindOfClass:[NSDictionary class]]) {
 
-        NSDictionary *deserializedDictionary = jsonObject;
+    //Deserializar una cadena de texto en formato JSON a un Array
+    
+    NSArray *jsonArray = [container decodeObjectToJSON:jsonString];
+    
+    GHTestLog(@"jsonArray =  %@", jsonArray);
         
-        GHTestLog(@"deserializedDictionary = %@", deserializedDictionary);
-    }
-    else if ([jsonObject isKindOfClass:[NSArray class]]) {
-        
-        NSArray *deserializedArray = jsonObject;
-        
-        GHTestLog(@"deserializedArray = %@", deserializedArray);
-        
-    }
-    
-    
-    
-    
-    
 }
-
 
 @end
