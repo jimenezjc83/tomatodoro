@@ -13,5 +13,8 @@
 
 // el + es para class methods
 +(void) initClock:(TOPeriod *)period;
++(int) getCurrentTime;
++(BOOL) getStatus;
++(void) updateTime:(int)time;
 
 @end

@@ -32,16 +32,30 @@
     // http://ocmock.org/ y ver http://www.mockobjects.com/
     // http://hackazach.net/code/2014/03/03/effective-testing-with-ocmock/
     // http://alexvollmer.com/posts/2010/06/28/making-fun-of-things-with-ocmock/
-    id periodo = [OCMockObject mockForClass:[TOPeriod class]];
-
-    // Tarea N.1 como accedo al reloj!? 
-    [TOClock initClock:periodo];
-
+    //TOPeriod *periodo = [[TOPeriod alloc] init];
+    id mock = [OCMockObject mockForClass:TOPeriod.class];
+    
     // Ahora que lo hemos inicializado queremos saber si el current time del clock es
     // el mismo que el que se ha especificado en el período
+    [[[mock stub] andReturnValue:@25] periodDuration];
     
-    [[[periodo stub] andReturn:@25] valueForKey:@"duration"];
-
+    // Tarea N.1 como accedo al reloj!? 
+    [TOClock initClock:mock];
+    
+    // con [mock periodDuration] estamos accediendo al accesor osea al getter
+    GHAssertEquals([TOClock getCurrentTime], [mock periodDuration], @"el valor de periodo deberia ser 25");
+    
+    // digamos que pasaron dos segundos, para esto necesitamos que el tiempo del reloj se reste en 2 segundos
+    [TOClock updateTime:-2];
+    
+    GHAssertEquals([TOClock getCurrentTime], 23, @"el valor de periodo deberia ser 23");
+    
+    // Cuando llegue a cero, se supone que el reloj se debe detener, el reloj debería tener un estado para
+    // saber que al llegar a 0 se debe detener
+    [TOClock updateTime:-23];
+    GHTestLog(@"Clock time: %d", [TOClock getCurrentTime]);
+    GHAssertEquals([TOClock getStatus], NO, @"el estatus no es falso");
+    
 
 }
 

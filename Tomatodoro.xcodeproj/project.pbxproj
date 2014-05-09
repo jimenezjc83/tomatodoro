@@ -387,7 +387,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(SRCROOT)/usr/lib/libOCMock.a",
-					"-force_reload",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +421,6 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(SRCROOT)/usr/lib/libOCMock.a",
-					"-force_reload",
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
