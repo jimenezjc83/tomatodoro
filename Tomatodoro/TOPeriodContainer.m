@@ -56,11 +56,13 @@
     
     //1. Convert jsonString to NSData
     
+    NSError *error = nil;
+    
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     //2. Deserialize jsonData
     
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
     
     //3. Cast jsonObject to Array
     

@@ -12,7 +12,13 @@
 #import "TOPeriodContainer.h"
 
 
-@interface TOTestCase : GHTestCase {}
+@interface TOTestCase : GHTestCase
+{
+
+    TOPeriodContainer *_container;  //El contenedor de periodos. Se lo va usar en algunos test.
+    NSString *_JSONTestString;
+    
+}
 
 @end
 
@@ -22,34 +28,27 @@
 
 - (void)setUp
 {
-
+    _container = [[TOPeriodContainer alloc] init];  //Inicializar el contenedor de periodos
+    _JSONTestString = [[NSString alloc] initWithFormat:@"[{\"name\":\"Long Break\",\"type\":1,\"duration\":29,\"uuid\":\"64AB89F5-BD08-4A0C-9F3C-2685534115DE\"}]"];
+    
 }
 
 // Run after each test method
 
 - (void)tearDown
 {
-
-}
-
-// Run before the tests are run for this class
-
-- (void)setUpClass
-{
-
-}
-
-// Run before the tests are run for this class
-
-- (void)tearDownClass
-{
-
+    _container = nil;   //Destruir el contenedor de periodos
 }
 
 /*
- Primer test de pruebas... Comparar 2 cadenas... -.-
+    testStrings
+ 
+    Primer test de pruebas... Comparar 2 cadenas... -.-
+ 
  */
-- (void) testStrings{
+
+- (void) testStrings
+{
 
     NSString *string1 = @"Cadena de texto";
     
@@ -66,19 +65,20 @@
 }
 
 /*
+    testCreatePeriod
+ 
     Test para creación de periodos
  
-    En este método se van a ejecutar los siguientes tests:
- 
-    1.   Crear un nuevo periodo
-    2.   Validar nombre del periodo
-    3.   Validar duración del periodo
-    4.   Validar el tipo de periodo
-    5.   Crear una colección de periodos y verificar colisiones de UUIDs
+    Tareas:
+    1. Crear un nuevo periodo
+    2. Validar nombre del periodo
+    3. Validar duración del periodo
+    4. Validar el tipo de periodo
+    5. Crear una colección de periodos y verificar colisiones de UUIDs
  
  */
 
-- (void) testCrudPeriodo
+- (void) testCreatePeriod
 {
     
     //1. Crear un nuevo periodo
@@ -105,26 +105,27 @@
     
     //5. Crear una colección de periodos y almacenarlos en un array contenedor
     
-    NSMutableArray *periods = [[NSMutableArray alloc] init];
-    
     for (int i=0; i < 5; i++) {
         TOPeriod *p1 = [TOPeriod randomPeriod];
-        [periods addObject:p1];
+        [_container.periods addObject:p1];
     }
     
     GHTestLog(@"Periodos Generados: ");
     
-    for (TOPeriod *period in periods) {
+    for (TOPeriod *period in _container.periods) {
         GHTestLog(@"%@", period);
     }
 
 }
 
 /*
-    Crear un periodo y un nuevo UUID para saber si estos colisionan
+    testGenerateUUID
+ 
+    Crear un periodo con un UUID aleatorio y verificar si un nuevo UUID colisiona con el actual
+ 
  */
 
-- (void) testCrearUUID
+- (void) testGenerateUUID
 {
     
     //1. Crear periodo vacío
@@ -149,53 +150,71 @@
 }
 
 /*
-    Definir un contenedor de periodos para almacenarlos en algún lugar.
+    testJSONGenerate
+    
+    Generar un conjunto de periodos y convertirlos a formato JSON
  
-    El proceso sería el siguiente:
-    1. Definir un arreglo de objetos y generar un conjunto de peridos aleatorios.
-    2. Definir un diccionario y agregar el arreglo de objetos generados tomando en cuenta la estructura de la clase Period
-    4. Serializar el diccionario y generar el contenedor tipo JSON
-    5. Exportar los datos y escribirlos al filesystem
+    Tareas:
+    1. Generar un conjunto de periodos aleatorios.
+    2. Convertir los periodos generados en diccionarios y guardarlos en el contenedor
+    3. Serializar el contenedor y generar una cadena de texto en formato JSON
+    4. Deserializar la cadena de texto y generar un arreglo de diccionarios que corresponden a los periodos generados
  
  */
-- (void) testGenerarJSON
+
+- (void) testJSONGenerate
 {
     
-    //1. Definir el contenedor de Periodos
+    //1. Generar un conjunto de periodos aleatorios.
     
-    TOPeriodContainer *container = [[TOPeriodContainer alloc] init];
-    
-    //2. Crear periodo de prueba
-    
-    //for (int i=0; i<5; i++) {
+    for (int i=0; i<5; i++) {
         
-    //Crear Periodo
+        //Crear Periodo
         
-    TOPeriod *periodTest = [TOPeriod randomPeriod];
+        TOPeriod *periodTest = [TOPeriod randomPeriod];
+        
+        //2. Convertir los periodos generados en diccionarios y guardarlos en el contenedor
+        
+        NSMutableDictionary *periodDictionary = [periodTest periodToDictionary];
+        
+        GHTestLog(@"dictionary = %@", periodDictionary);
+        
+        [_container.periodsDictionaries addObject:periodDictionary];
     
-    //Almacenar en un diccionario el periodo y agregarlo al contenedor
-    
-    NSMutableDictionary *periodDictionary = [periodTest periodToDictionary];
-    
-    GHTestLog(@"dictionary = %@", periodDictionary);
-    
-    [container.periodsDictionaries addObject:periodDictionary];
-    
-    //}
-    
+    }
+
     //Serializar el contenedor de periodos a JSON
     
-    NSString *jsonString = [container encodeObjectToJSON:container.periodsDictionaries];
+    NSString *jsonString = [_container encodeObjectToJSON:_container.periodsDictionaries];
     
     GHTestLog(@"jsonString =  %@", jsonString);
-    
 
     //Deserializar una cadena de texto en formato JSON a un Array
     
-    NSArray *jsonArray = [container decodeObjectToJSON:jsonString];
+    NSArray *jsonArray = [_container decodeObjectToJSON:jsonString];
     
     GHTestLog(@"jsonArray =  %@", jsonArray);
         
+}
+
+/*
+    testManagePeriodContainer
+ 
+    Realizar operaciones sobre el contenedor de periodos:
+    
+    - Agregar periodos
+    - Eliminar periodo(s)
+    - Actualizar periodo(s)
+ 
+    Todo esto, obteniendo los datos desde un arreglo tipo JSON definido en el setUp de esta clase.
+ 
+ */
+
+- (void) testManagePeriodContainer
+
+{
+    
+    
 }
 
 @end
