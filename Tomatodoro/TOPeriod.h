@@ -27,7 +27,9 @@
 
 + (instancetype) randomPeriod;
 
-- (instancetype) initEmptyPeriod:(NSString *)name;
+- (instancetype) initEmptyPeriod:(NSString *) name;
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary;
 
 - (NSMutableDictionary *) periodToDictionary;
 

@@ -173,19 +173,15 @@
         
         TOPeriod *periodTest = [TOPeriod randomPeriod];
         
-        //2. Convertir los periodos generados en diccionarios y guardarlos en el contenedor
+        //2. Agregar periodo al contenedor
         
-        NSMutableDictionary *periodDictionary = [periodTest periodToDictionary];
-        
-        GHTestLog(@"dictionary = %@", periodDictionary);
-        
-        [_container.periodsDictionaries addObject:periodDictionary];
+        [_container.periods addObject:periodTest];
     
     }
 
     //Serializar el contenedor de periodos a JSON
     
-    NSString *jsonString = [_container encodeObjectToJSON:_container.periodsDictionaries];
+    NSString *jsonString = [_container encodeToJSON];
     
     GHTestLog(@"jsonString =  %@", jsonString);
 
@@ -211,8 +207,37 @@
  */
 
 - (void) testManagePeriodContainer
-
 {
+ 
+    // 1. El primer paso es crear el arreglo JSON a partir de la cadena de texto definida en el setUP
+    
+    NSArray *jsonArray = [_container decodeObjectToJSON:_JSONTestString];
+    
+    GHAssertNotNil(jsonArray, @"Error al obtener los datos del JSON String");
+    
+    // 2. Recorrer el array para convertir los diccionarios en instancias de periodos
+    
+    for (NSDictionary *periodDict in jsonArray) {
+        
+        TOPeriod *p = [[TOPeriod alloc] initWithDictionary:periodDict];
+        
+        GHTestLog(@"Creando periodo a partir de json: %@ - Instancia: %@", periodDict, p);
+       
+        [_container.periods addObject:p];
+        
+    }
+    
+    // 3. Agregar un nuevo periodo al contenedor
+    
+    TOPeriod *newPeriod = [TOPeriod randomPeriod];
+    
+    [_container.periods addObject:newPeriod];
+    
+    // 4. Obtener el JSON del nuevo contenedor
+    
+    NSString *newJSONString = [_container encodeToJSON];
+    
+    GHAssertNotNil(newJSONString, @"No se obtuvo información del contenedor");
     
     
 }

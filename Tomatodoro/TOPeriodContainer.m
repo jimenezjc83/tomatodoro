@@ -7,46 +7,69 @@
 //
 
 #import "TOPeriodContainer.h"
+#import "TOPeriod.h"
 
 @implementation TOPeriodContainer
 
 
-// Serialize an object in JSON format
+// Return JSON string from period Mutable Array
 
-- (NSString *) encodeObjectToJSON:(id) dataCollection
+- (NSString *) encodeToJSON
 {
-    
-    NSString *jsonString;
-    
-    NSError *error = nil;
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataCollection
-                                            options:0 //Pass NSJSONWritingPrettyPrinted to format JSON Output
-                                            error:&error];
-    
-    if ([jsonData length] > 0 && error == nil)
-    {
+    if ([_periods count] > 0) {
         
-        NSLog(@"Successfully serialized the object into data");
+        NSMutableArray *periodsDictionaries = [[NSMutableArray alloc] init];
         
-        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        // Iterate over the _periods and generate a Dictionary array of periods objects
         
+        for (TOPeriod *period in _periods) {
+            
+            NSDictionary *periodDict = [period periodToDictionary];
+            
+            [periodsDictionaries addObject:periodDict];
+            
+        }
+        
+        // JSON Serialization
+        
+        NSString *jsonString;
+        
+        NSError *error = nil;
+        
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:periodsDictionaries
+                                                options:0 //Pass NSJSONWritingPrettyPrinted to format JSON Output
+                                                error:&error];
+        
+        if ([jsonData length] > 0 && error == nil)
+        {
+            
+            NSLog(@"Successfully serialized the object into data");
+            
+            jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            
+        }
+        else if ([jsonData length] == 0 && error ==nil )
+        {
+            
+            NSLog(@"No data was returned after serialization");
+            
+            jsonString = @"";
+            
+        }else if (error != nil){
+            
+            NSLog(@"An error happened = %@", error);
+            
+            jsonString = nil;
+        }
+        
+        return jsonString;
     }
-    else if ([jsonData length] == 0 && error ==nil )
+    
+    else
+        
     {
-        
-        NSLog(@"No data was returned after serialization");
-        
-        jsonString = @"";
-        
-    }else if (error != nil){
-    
-        NSLog(@"An error happened = %@", error);
-        
-        jsonString = nil;
+        return nil;
     }
-    
-    return jsonString;
 }
 
 // Deserialize a string in JSON format and returns a dictionary Array
@@ -74,6 +97,8 @@
     
 }
 
+
+
 // Getters for Arrays
 
 - (NSMutableArray *)getPeriods
@@ -82,14 +107,6 @@
         _periods = [NSMutableArray new];
     }
     return _periods;
-}
-
-- (NSMutableArray *)getPeriodsDictionaries
-{
-    if (!_periodsDictionaries) {
-        _periodsDictionaries = [NSMutableArray new];
-    }
-    return _periodsDictionaries;
 }
 
 @end

@@ -12,18 +12,14 @@
 
 @property(nonatomic, getter = getPeriods) NSMutableArray *periods;
 
-@property(nonatomic, getter = getPeriodsDictionaries) NSMutableArray *periodsDictionaries;
-
 //Class Methods
 
-- (NSString *) encodeObjectToJSON:(id) dataCollection;
+- (NSString *) encodeToJSON;
 
 - (NSArray *) decodeObjectToJSON:(NSString *) jsonString;
 
 //Getters for arrays properties
 
 - (NSMutableArray *)getPeriods;
-
-- (NSMutableArray *)getPeriodsDictionaries;
 
 @end
