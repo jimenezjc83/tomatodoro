@@ -47,7 +47,8 @@
 }
 
 
-//Se define este inicializador para crear un nuevo periodo con valores por defecto, recibe un nombre cualquiera
+// Se define este inicializador para crear un nuevo periodo con valores por defecto, recibe un nombre cualquiera
+
 - (instancetype) initEmptyPeriod:(NSString *)name
 {
     self = [super init];
@@ -60,6 +61,23 @@
         //_periodUuid=[self generateRandomID];
     }
     return self;
+}
+
+// Inicializa una instancia del periodo a partir de un diccionario
+
+- (instancetype) initWithDictionary:(NSDictionary *) dictionary
+{
+    self = [super init];
+    
+    if (self) {
+        _periodName=[dictionary objectForKey:@"name"];
+        _periodType=[[dictionary objectForKey:@"type"] integerValue];
+        _periodDuration=[[dictionary objectForKey:@"duration"] integerValue];
+        _periodUuid=[dictionary objectForKey:@"uuid"];;
+    }
+    
+    return self;
+    
 }
 
 //Método para generar IDs aleatorios

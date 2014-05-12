@@ -23,6 +23,8 @@
 		A02FB84918FF2E9800C97AC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84818FF2E9800C97AC6 /* main.m */; };
 		A02FB84D18FF2E9800C97AC6 /* TOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */; };
 		A02FB84F18FF2E9800C97AC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A02FB84E18FF2E9800C97AC6 /* Images.xcassets */; };
+		A05DDAA1191BF5CB00C030EE /* TOPeriodContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A05DDAA0191BF5CB00C030EE /* TOPeriodContainer.m */; };
+		A05DDAA2191BF5E300C030EE /* TOPeriodContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = A05DDAA0191BF5CB00C030EE /* TOPeriodContainer.m */; };
 		A0844488190F0282009BCB1A /* TOPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = A0844487190F0282009BCB1A /* TOPeriod.m */; };
 		A084448B190F02A0009BCB1A /* TOWorkPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = A084448A190F02A0009BCB1A /* TOWorkPlan.m */; };
 		A08651E2190EFED400B2743A /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = A08651E1190EFED400B2743A /* README.txt */; };
@@ -56,6 +58,8 @@
 		A02FB84C18FF2E9800C97AC6 /* TOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOAppDelegate.m; sourceTree = "<group>"; };
 		A02FB84E18FF2E9800C97AC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A02FB85518FF2E9800C97AC6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A05DDA9F191BF5CB00C030EE /* TOPeriodContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOPeriodContainer.h; sourceTree = "<group>"; };
+		A05DDAA0191BF5CB00C030EE /* TOPeriodContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOPeriodContainer.m; sourceTree = "<group>"; };
 		A0844486190F0282009BCB1A /* TOPeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOPeriod.h; sourceTree = "<group>"; };
 		A0844487190F0282009BCB1A /* TOPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOPeriod.m; sourceTree = "<group>"; };
 		A0844489190F02A0009BCB1A /* TOWorkPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOWorkPlan.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				A0844489190F02A0009BCB1A /* TOWorkPlan.h */,
 				A084448A190F02A0009BCB1A /* TOWorkPlan.m */,
 				A08651E1190EFED400B2743A /* README.txt */,
+				A05DDA9F191BF5CB00C030EE /* TOPeriodContainer.h */,
+				A05DDAA0191BF5CB00C030EE /* TOPeriodContainer.m */,
 			);
 			path = Tomatodoro;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05DDAA2191BF5E300C030EE /* TOPeriodContainer.m in Sources */,
 				A0EC40F31911620500FD59AE /* TOClock.m in Sources */,
 				D7767EF71911AC940001C252 /* TOTestClock.m in Sources */,
 				A0EC40F41911620500FD59AE /* TOWorkPlan.m in Sources */,
@@ -330,6 +337,7 @@
 				A084448B190F02A0009BCB1A /* TOWorkPlan.m in Sources */,
 				A02FB84918FF2E9800C97AC6 /* main.m in Sources */,
 				A02FB84D18FF2E9800C97AC6 /* TOAppDelegate.m in Sources */,
+				A05DDAA1191BF5CB00C030EE /* TOPeriodContainer.m in Sources */,
 				D72F28CD19072FDA00737AD5 /* TOClock.m in Sources */,
 				A0844488190F0282009BCB1A /* TOPeriod.m in Sources */,
 			);
