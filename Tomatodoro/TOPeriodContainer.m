@@ -97,6 +97,29 @@
     
 }
 
+//Remueve del contenedor un periodo con un UUID
+
+- (void) removePeriod:(NSString *) uuidString
+{
+    
+    for (TOPeriod *period in _periods) {
+    
+        if ( [period.periodUuid isEqualToString:uuidString] ) {
+            
+            //Obtener el indice del objeto y removerlo del contenedor
+            
+            [_periods removeObjectAtIndex:[_periods indexOfObjectIdenticalTo:period]];
+            
+            NSLog(@"Period removed...");
+            
+            return;
+
+        }
+    }
+    
+    NSLog(@"Period not found in the container...");
+    
+}
 
 
 // Getters for Arrays

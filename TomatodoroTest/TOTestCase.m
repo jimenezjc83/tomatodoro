@@ -238,6 +238,22 @@
     
     GHAssertNotNil(newJSONString, @"No se obtuvo información del contenedor");
     
+    // 5. Agregar un nuevo periodo y eliminar el primer elemento
+    
+    TOPeriod *newPeriod2 = [TOPeriod randomPeriod];
+    
+    [_container.periods addObject:newPeriod2];
+    
+    GHTestLog(@"Periodos: %@", _container.periods);
+    
+    GHTestLog(@"Remover periodo con UUID...");
+    
+    NSString *uuidString = @"64AB89F5-BD08-4A0C-9F3C-2685534115DE";
+    
+    [_container removePeriod:uuidString];
+    
+    GHTestLog(@"Contenedor modificado: %@", _container.periods);
+    
     
 }
 

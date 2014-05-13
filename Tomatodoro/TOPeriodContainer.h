@@ -18,6 +18,8 @@
 
 - (NSArray *) decodeObjectToJSON:(NSString *) jsonString;
 
+- (void) removePeriod:(NSString *) uuid;
+
 //Getters for arrays properties
 
 - (NSMutableArray *)getPeriods;
